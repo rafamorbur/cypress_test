@@ -26,8 +26,8 @@ it('a not valid password try login', () =>{
    it('a not valid user try login', () =>{ 
     cy.visit('https://the-internet.herokuapp.com/')
     cy.get(':nth-child(21) > a').click ()
-    cy.get('#username').type("ramon")
-    cy.get('#password').type("SuperSecretPassword!")
+    cy.get('#username').clear()
+    cy.get('#password').clear ()
     cy.get('.fa').click()
     cy.get('#flash').contains(" Your username is invalid!")
      
