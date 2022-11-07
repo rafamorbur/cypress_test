@@ -23,6 +23,17 @@ it('a not valid password try login', () =>{
      
    })
 
+
+   it('login campos vacios', () =>{ 
+    cy.visit('https://the-internet.herokuapp.com/')
+    cy.get(':nth-child(21) > a').click ()
+    cy.get('#username').type("123 ")
+    cy.get('#password').type("SuperSecretPassword!")
+    cy.get('.fa').click()
+    cy.get('#flash').contains(" Your username is invalid!")
+     
+   })
+
    it('a not valid user try login', () =>{ 
     cy.visit('https://the-internet.herokuapp.com/')
     cy.get(':nth-child(21) > a').click ()
@@ -33,15 +44,6 @@ it('a not valid password try login', () =>{
      
    })
 
-   it('login campos vacios', () =>{ 
-    cy.visit('https://the-internet.herokuapp.com/')
-    cy.get(':nth-child(21) > a').click ()
-    cy.get('#username').type(" ")
-    cy.get('#password').type("SuperSecretPassword!")
-    cy.get('.fa').click()
-    cy.get('#flash').contains(" Your username is invalid!")
-     
-   })
   
 
    it('click shifting opc ', () =>{ 
